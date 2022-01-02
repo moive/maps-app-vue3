@@ -1,12 +1,11 @@
-import { createStore } from 'vuex'
+import { createStore } from 'vuex';
 
-export default createStore({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
+export interface StateInterface {
+  example:unknown
+}
+
+export default createStore<StateInterface>({
   modules: {
+    example: {}
   }
 })
