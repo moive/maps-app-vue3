@@ -4,8 +4,15 @@ import { PlacesStateInterface } from './state';
 
 
 const actions: ActionTree<PlacesStateInterface, StateInterface> = {
-    someAction(){
-
+    getInitialLocation({commit}){
+        // todo: get loading
+        navigator.geolocation.getCurrentPosition(
+            ({coords: {longitude, latitude}}) => commit('setLngLat', {lng: longitude, lat: latitude}),
+            (err)=>{
+                console.error(err);
+                throw new Error("No geolocation :(");
+            }
+        );
     }
 }
 

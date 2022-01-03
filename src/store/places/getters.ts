@@ -4,8 +4,8 @@ import { PlacesStateInterface } from './state';
 
 
 const getters: GetterTree<PlacesStateInterface, StateInterface> = {
-    someGetter(){
-
+    isUserLocationReady(state){
+        return !!state.userLocation;
     }
 }
 
