@@ -31,6 +31,6 @@
     .map-container{
         width: 100vw;
         height: 100vh;
-        background-color: tomato;
+        // background-color: tomato;
     }
 </style>

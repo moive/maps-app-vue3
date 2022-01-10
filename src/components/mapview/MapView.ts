@@ -1,4 +1,4 @@
-import { defineComponent, onMounted, ref } from 'vue';
+import { defineComponent, onMounted, ref, watch } from 'vue';
 import { usePlacesStore } from '@/composables';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from 'mapbox-gl';
@@ -14,16 +14,22 @@ export default defineComponent({
 
         onMounted(()=>{
             // console.log(mapElement.value)
-            if(isUserLocationReady){
+            if(isUserLocationReady.value){
                 return initMap();
             }
             console.log('No location map yet')
         });
 
-        const initMap = ()=>{
 
+        watch(isUserLocationReady, ()=>{
+            if(isUserLocationReady.value) initMap();
+        });
+
+        const initMap = async ()=>{
             if(!mapElement.value) throw new Error('Div Element not exits');
             if(!userLocation.value) throw new Error('User location not exits');
+
+            await Promise.resolve(); // fix to display the map correctly
 
             const map = new mapboxgl.Map({
                 container: mapElement.value, // container ID
