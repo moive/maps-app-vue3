@@ -37,6 +37,10 @@ export default defineComponent({
                 center: userLocation.value, // starting position [lng, lat]
                 zoom: 15 // starting zoom
             });
+
+            const myLocationMarker = new mapboxgl.Marker()
+                .setLngLat(userLocation.value)
+                .addTo(map)
         };
 
         return {

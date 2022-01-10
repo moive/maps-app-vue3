@@ -18,7 +18,7 @@ export const usePlacesStore = () => {
         userLocation: computed(()=> store.state.places.userLocation),
 
         // Getters
-        isUserLocationReady: computed<boolean>(_=> store.getters['places/isUserLocationReady']),
+        isUserLocationReady: computed<boolean>(()=> store.getters['places/isUserLocationReady']),
 
         // Mutations
 
