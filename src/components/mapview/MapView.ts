@@ -38,9 +38,17 @@ export default defineComponent({
                 zoom: 15 // starting zoom
             });
 
+            const myLocationPopup = new mapboxgl.Popup({offset:[0,-25]})
+                .setLngLat(userLocation.value)
+                .setHTML(`
+                    <h4>I'm here</h4>
+                `)
+
             const myLocationMarker = new mapboxgl.Marker()
                 .setLngLat(userLocation.value)
-                .addTo(map)
+                .setPopup(myLocationPopup)
+                .addTo(map);
+
         };
 
         return {
