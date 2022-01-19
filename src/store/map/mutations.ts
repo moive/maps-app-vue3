@@ -3,7 +3,9 @@ import { MapStateInterface } from './state';
 
 
 const mutations: MutationTree<MapStateInterface> = {
-    someMutation(){}
+    someMutation(){
+        //
+    }
 }
 
 export default mutations;

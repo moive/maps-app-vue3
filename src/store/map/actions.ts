@@ -4,7 +4,9 @@ import { MapStateInterface } from './state';
 
 
 const actions: ActionTree<MapStateInterface, StateInterface> = {
-    someAction(){}
+    someAction(){
+        //
+    }
 }
 
 export default actions;

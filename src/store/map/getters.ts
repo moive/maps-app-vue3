@@ -5,7 +5,7 @@ import { MapStateInterface } from './state';
 
 const getters: GetterTree<MapStateInterface, StateInterface> = {
     someGetter(){
-
+        //
     }
 }
 
